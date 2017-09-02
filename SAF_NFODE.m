@@ -209,11 +209,11 @@ for T=sa_bgt:-sa_step:sa_edt
 			flag_2=(max(abs(derO_NotADerNameWm-derO_NotADerNameWh))<rk4tol/15)||(max(abs(derC_NotADerNameWm-derC_NotADerNameWh))<rk4tol);
 			switch flag_1-flag_2
 			case 1
-				rk4step=rk4step/2
+				rk4step=rk4step/2;
 			case -1
-				rk4step=rk4step*2
+				rk4step=rk4step*2;
 			otherwise
-				steps=steps+1
+				steps=steps+1;
 				var_value_o=var_value_o+[derO_NotADerNameWm,1]*rk4step; var_value_c=var_value_c+[derC_NotADerNameWm,1]*rk4step;
 				solution_list_o(steps,:)=var_value_o; solution_list_c(steps,:)=var_value_c; x_NotAIndVarName=x_NotAIndVarName+rk4step;
 			end
